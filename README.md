@@ -31,4 +31,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 https://gist.github.com/Martin88garcia/85b0e5ae5fc5cb9b5ee49015f787f145
 
+### `VSCode recomended extensions`
 
+https://github.com/styled-components/vscode-styled-components
