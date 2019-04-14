@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "removeContracts": "rimraf ./src/contracts/*.json",
+    "deployContracts": "yarn removeContracts && truffle compile && truffle migrate",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
