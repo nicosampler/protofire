@@ -1,1 +1,0 @@
-export const VOTE_COST = 0.01;

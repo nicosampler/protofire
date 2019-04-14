@@ -1,12 +1,13 @@
 // @vendors
 import React from 'react';
-import GlobalStyles from '../GlobalStyles';
+import GlobalStyles from '../../GlobalStyles';
 import styled from 'styled-components/macro';
+import { drizzleReactHooks } from 'drizzle-react';
+import PropTypes from 'prop-types';
 // @components
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-//import logo from './logo.svg';
 
 const StyledContainer = styled.div`
   display: grid;
@@ -22,30 +23,27 @@ const StyledContainer = styled.div`
   height: 100vh;
 `;
 
-function App() {
+function App({ drizzle }) {
+  const { useCacheCall } = drizzleReactHooks.useDrizzle();
+
   return (
     <>
       <GlobalStyles />
       <StyledContainer>
         <Header />
-        <Main />
+        <Main
+          voteInfo={useCacheCall('Ballot', 'getVote')}
+          statistics={useCacheCall('Ballot', 'getStatistics')}
+          drizzle={drizzle}
+        />
         <Footer />
       </StyledContainer>
     </>
   );
 }
 
-export default App;
+App.propTypes = {
+  drizzle: PropTypes.object.isRequired
+};
 
-/*<img src={logo} className="App-logo" alt="logo" />
-           <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a> */
+export default App;

@@ -5,6 +5,8 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
+    "drizzle": "^1.4.0",
+    "drizzle-react": "nicosampler/drizzle-react#develop",
     "react": "^16.8.6",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
@@ -14,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "removeContracts": "rimraf ./src/contracts/*.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -29,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "rimraf": "^2.6.3",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",

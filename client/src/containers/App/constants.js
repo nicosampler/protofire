@@ -1,0 +1,1 @@
+export const VOTE_COST = 10000000000000000;
