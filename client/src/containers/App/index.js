@@ -31,6 +31,12 @@ function App({ drizzle }) {
       <GlobalStyles />
       <StyledContainer>
         <Header />
+        {/*
+          la llamada a statistics, podría hacerce dentro del componente Main, cuando se quiere hacer el render
+          del componente Results. AL parecer hay algun error en la lib (la versión no es estable), pq al momento de
+          invocar al metodo Vote de Ballot,  se vuelve a disparar el render y algunas veces los hooks cambian el orden.
+          Eso tira un warning de react pq los hooks siempre tienen que ser invocados en el mismo orden.
+        */}
         <Main
           voteInfo={useCacheCall('Ballot', 'getVote')}
           statistics={useCacheCall('Ballot', 'getStatistics')}
